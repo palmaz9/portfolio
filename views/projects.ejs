@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 </head>
+
 <body>
     <header>
-        <h1>Lucas Palma</h1>
+        <h1 class="animate__animated animate__fadeInDown">Lucas Palma</h1>
         <nav>
             <ul>
                 <li><a href="/">Main Page</a></li>
@@ -17,32 +25,100 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <h2>Projects</h2>
-        <div>
-            <h3>VBA Database Management and Auditing Emails (Braskem)</h3>
-            <p>Developed a VBA algorithm to manage databases and send auditing emails to external law firms.</p>
-        </div>
-        <div>
-            <h3>Web Development Application for Hospital</h3>
-            <p>Created a web application for managing patient and doctor databases.</p>
-        </div>
-        <div>
-            <h3>Power BI Dashboards for Legal Efficiency (Braskem)</h3>
-            <p>Developed visual dashboards for tracking KPIs in the Legal Efficiency department.</p>
-        </div>
-        <div>
-            <h3>Housing Prediction and Convolutional Neural Networks (AI class)</h3>
-            <p>Worked on housing prediction models and CNNs for image recognition tasks.</p>
-        </div>
-        <div>
-            <h3>Chess Engine Paper (AI class)</h3>
-            <p>Authored a 10-page paper on building a chess engine.</p>
-        </div>
-    </section>
+
+    <main>
+        <section class="hero">
+            <h2 class="animate__animated animate__fadeInDown">Projects</h2>
+            <p class="animate__animated animate__fadeInUp">Explore my portfolio of projects showcasing my skills and experiences.</p>
+        </section>
+
+        <section class="content">
+            <div class="card" id="project1-card">
+                <h3>VBA Database Management and Auditing Emails (Braskem)</h3>
+                <p>Developed a VBA algorithm to manage databases and send auditing emails to external law firms.</p>
+            </div>
+
+            <div class="card" id="project2-card">
+                <h3>Web Development Application for Hospital</h3>
+                <p>Created a web application for managing patient and doctor databases.</p>
+            </div>
+
+            <div class="card" id="project3-card">
+                <h3>Power BI Dashboards for Legal Efficiency (Braskem)</h3>
+                <p>Developed visual dashboards for tracking KPIs in the Legal Efficiency department.</p>
+            </div>
+
+            <div class="card" id="project4-card">
+                <h3>Housing Prediction and Convolutional Neural Networks (AI class)</h3>
+                <p>Worked on housing prediction models and CNNs for image recognition tasks.</p>
+            </div>
+
+            <div class="card" id="project5-card">
+                <h3>Chess Engine Paper (AI class)</h3>
+                <p>Authored a 10-page paper on building a chess engine.</p>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>LinkedIn: <a href="https://linkedin.com/in/lpalma1999">lpalma1999</a></p>
-        <p>GitHub: <a href="https://github.com/palmaz9">palmaz9</a></p>
+        <div class="social-media">
+            <a href="https://linkedin.com/in/lpalma1999" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/palmaz9" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2024 Lucas Palma. All rights reserved.</p>
     </footer>
+
+    <script>
+        // GSAP animations for project cards
+        gsap.from("#project1-card", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+        gsap.from("#project2-card", { duration: 1, y: 50, opacity: 0, delay: 1 });
+        gsap.from("#project3-card", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
+        gsap.from("#project4-card", { duration: 1, y: 50, opacity: 0, delay: 2 });
+        gsap.from("#project5-card", { duration: 1, y: 50, opacity: 0, delay: 2.5 });
+
+        // ScrollMagic to trigger animations on scroll
+        var controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+            triggerElement: "#project1-card",
+            triggerHook: 0.9,
+            reverse: false
+        })
+            .setClassToggle("#project1-card", "visible")
+            .addTo(controller);
+
+        new ScrollMagic.Scene({
+            triggerElement: "#project2-card",
+            triggerHook: 0.9,
+            reverse: false
+        })
+            .setClassToggle("#project2-card", "visible")
+            .addTo(controller);
+
+        new ScrollMagic.Scene({
+            triggerElement: "#project3-card",
+            triggerHook: 0.9,
+            reverse: false
+        })
+            .setClassToggle("#project3-card", "visible")
+            .addTo(controller);
+
+        new ScrollMagic.Scene({
+            triggerElement: "#project4-card",
+            triggerHook: 0.9,
+            reverse: false
+        })
+            .setClassToggle("#project4-card", "visible")
+            .addTo(controller);
+
+        new ScrollMagic.Scene({
+            triggerElement: "#project5-card",
+            triggerHook: 0.9,
+            reverse: false
+        })
+            .setClassToggle("#project5-card", "visible")
+            .addTo(controller);
+    </script>
 </body>
+
 </html>
