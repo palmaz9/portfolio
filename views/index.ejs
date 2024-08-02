@@ -22,10 +22,10 @@
 
 <body>
     <header>
-        <h1 class="animate__animated animate__fadeInDown">Lucas Palma</h1>
+        <h1>Lucas Palma</h1>
         <nav>
             <ul>
-                <li><a href="/">Main Page</a></li>
+                <li><a href="/">Introduction</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/references">References</a></li>
             </ul>
@@ -39,46 +39,117 @@
         </section>
 
         <section class="content">
-            <div class="card" id="employment-card">
+            <!-- Employment History Section -->
+            <div class="employment-history">
                 <h3>Employment History</h3>
-                <p><strong>Graduate Teaching Assistant</strong> - Pittsburg State University (10/2023 to 05/2024)</p>
-                <ul>
-                    <li>Provided Excel technical support and Pivot Table training</li>
-                    <li>Developed a database analysis for student communication engagement</li>
-                </ul>
-                <p><strong>Legal Efficiency Intern</strong> - Braskem S.A. (11/2020 to 12/2021)</p>
-                <ul>
-                    <li>Executed database cleaning, querying, and optimization tasks weekly</li>
-                    <li>Created visual dashboards using Power BI</li>
-                    <li>Developed a VBA algorithm to efficiently send auditing emails</li>
-                </ul>
-                <p><strong>Retail Intern</strong> - Raizen S.A. (01/2018 to 03/2019)</p>
-                <ul>
-                    <li>Manipulated Salesforce reports and conducted analysis using Pivot Tables</li>
-                    <li>Provided comprehensive reports for strategic decision-making</li>
-                </ul>
+                <div class="employment-cards">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <img src="/images/pittstate.png" alt="Pittsburg State University Logo" class="institution-logo">
+                            <p><strong>Graduate Teaching Assistant</strong> - Pittsburg State University (10/2023 to 05/2024)</p>
+                        </div>
+                        <ul>
+                            <li>Provided Excel technical support and Pivot Table training</li>
+                            <li>Developed a database analysis for student communication engagement</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <img src="/images/braskem.png" alt="Braskem Logo" class="institution-logo">
+                            <p><strong>Legal Efficiency Intern</strong> - Braskem S.A. (11/2020 to 12/2021)</p>
+                        </div>
+                        <ul>
+                            <li>Executed database cleaning, querying, and optimization tasks weekly</li>
+                            <li>Created visual dashboards using Power BI</li>
+                            <li>Developed a VBA algorithm to efficiently send auditing emails</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <img src="/images/raizen.png" alt="Raizen Logo" class="institution-logo">
+                            <p><strong>Retail Intern</strong> - Raizen S.A. (01/2018 to 03/2019)</p>
+                        </div>
+                        <ul>
+                            <li>Manipulated Salesforce reports and conducted analysis using Pivot Tables</li>
+                            <li>Provided comprehensive reports for strategic decision-making</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="card" id="skills-card">
+            <!-- Skills Section -->
+            <div class="skills-section">
                 <h3>Skills</h3>
-                <ul>
-                    <li>SQL, Power BI Development, Salesforce, MS Excel</li>
-                    <li>R, RStudio, Machine Learning, NumPy, scikit-learn, pandas, matplotlib</li>
-                    <li>Python, Visual Basic, Java, Dart, Google Apps Script</li>
-                    <li>HTML, CSS, JavaScript</li>
-                </ul>
+                <div class="skills-cards">
+                    <div class="skills-card">
+                        <h4>Data Analysis & Visualization</h4>
+                        <ul>
+                            <li>SQL</li>
+                            <li>Power BI Development</li>
+                            <li>MS Excel</li>
+                            <li>R, RStudio</li>
+                            <li>Machine Learning</li>
+                            <li>pandas, matplotlib, NumPy, scikit-learn</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-card">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>Visual Basic</li>
+                            <li>Java</li>
+                            <li>Dart</li>
+                            <li>Google Apps Script</li>
+                            <li>HTML, CSS, JavaScript</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-card">
+                        <h4>CRM & Business Tools</h4>
+                        <ul>
+                            <li>Salesforce</li>
+                            <li>Power BI</li>
+                            <li>Google Apps Script</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="card" id="education-card">
+            <!-- Education Section -->
+            <div class="education-section">
                 <h3>Education</h3>
-                <p><strong>Master of Science in Technology, Emphasis in Information Technology</strong> - Pittsburg State University (05/2024)</p>
-                <p><strong>Bachelor of Business Administration</strong> - Salvador University (12/2021)</p>
+                <div class="education-cards">
+                    <div class="education-box">
+                        <img src="/images/pittstate.png" alt="Pittsburg State University Logo" class="education-logo">
+                        <p>Pittsburg State University</p>
+                        <p><strong>Master of Science in Technology<br> Emphasis in Information Technology</strong><br>05/2024<br>Pittsburg, Kansas, United States</p>
+                    </div>
+                    <div class="education-box">
+                        <img src="/images/unifacs.jpg" alt="Salvador University Logo" class="education-logo">
+                        <p>Salvador University</p>
+                        <p><strong>Bachelor of Business Administration</strong><br>12/2021<br>Salvador, Bahia, Brazil</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="card" id="languages-card">
+            <!-- Languages Section -->
+            <div class="languages-section">
                 <h3>Languages</h3>
-                <p>English: Fluent</p>
-                <p>Portuguese: Native</p>
+                <div class="languages-cards">
+                    <div class="languages-box">
+                        <img src="/images/unitedStates.png" alt="USA Flag" class="flag">
+                        <p>English</p>
+                        <p><strong>Fluent</strong></p>
+                    </div>
+                    <div class="languages-box">
+                        <img src="/images/brazil.png" alt="Brazil Flag" class="flag">
+                        <p>Portuguese</p>
+                        <p><strong>Native</strong></p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -94,7 +165,6 @@
     <script>
         // Remove preventDefault for navigation links
         $(document).ready(function () {
-            // Remove preventDefault for external links
             $('nav ul li a').on('click', function (event) {
                 if ($(this).attr('href').startsWith('#')) {
                     event.preventDefault(); // Only prevent default for anchor links within the page
@@ -106,44 +176,44 @@
         });
 
         // GSAP animations for cards
-        gsap.from("#employment-card", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
-        gsap.from("#skills-card", { duration: 1, y: 50, opacity: 0, delay: 1 });
-        gsap.from("#education-card", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
-        gsap.from("#languages-card", { duration: 1, y: 50, opacity: 0, delay: 2 });
+        gsap.from(".employment-history", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+        gsap.from(".skills-section", { duration: 1, y: 50, opacity: 0, delay: 1 });
+        gsap.from(".education-section", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
+        gsap.from(".languages-section", { duration: 1, y: 50, opacity: 0, delay: 2 });
 
         // ScrollMagic to trigger animations on scroll
         var controller = new ScrollMagic.Controller();
 
-        var scene1 = new ScrollMagic.Scene({
-            triggerElement: "#employment-card",
+        new ScrollMagic.Scene({
+            triggerElement: ".employment-history",
             triggerHook: 0.9,
             reverse: false
         })
-            .setClassToggle("#employment-card", "visible")
+            .setClassToggle(".employment-history", "visible")
             .addTo(controller);
 
-        var scene2 = new ScrollMagic.Scene({
-            triggerElement: "#skills-card",
+        new ScrollMagic.Scene({
+            triggerElement: ".skills-section",
             triggerHook: 0.9,
             reverse: false
         })
-            .setClassToggle("#skills-card", "visible")
+            .setClassToggle(".skills-section", "visible")
             .addTo(controller);
 
-        var scene3 = new ScrollMagic.Scene({
-            triggerElement: "#education-card",
+        new ScrollMagic.Scene({
+            triggerElement: ".education-section",
             triggerHook: 0.9,
             reverse: false
         })
-            .setClassToggle("#education-card", "visible")
+            .setClassToggle(".education-section", "visible")
             .addTo(controller);
 
-        var scene4 = new ScrollMagic.Scene({
-            triggerElement: "#languages-card",
+        new ScrollMagic.Scene({
+            triggerElement: ".languages-section",
             triggerHook: 0.9,
             reverse: false
         })
-            .setClassToggle("#languages-card", "visible")
+            .setClassToggle(".languages-section", "visible")
             .addTo(controller);
     </script>
 </body>
