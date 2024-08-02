@@ -1,14 +1,32 @@
-const http = require('http');
+// app.js
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const express = require('express');
+const path = require('path');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Set up EJS as the templating engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Define routes for your pages
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Main Page' });
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.get('/projects', (req, res) => {
+  res.render('projects', { title: 'Projects' });
+});
+
+app.get('/references', (req, res) => {
+  res.render('references', { title: 'References' });
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
