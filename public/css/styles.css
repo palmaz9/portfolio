@@ -51,10 +51,19 @@ nav ul li a:hover {
     background: linear-gradient(135deg, #3949ab, #5c6bc0);
     color: white;
     text-align: center;
-    padding: 150px 0 80px;
-    margin-top: 35px; /* Add top margin */
+    padding: 115px 0 60px; /* Reduced top and bottom padding */
+    margin-top: 100px; /* Align with the header height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 15px 15px;
+    max-width: 1519px; /* Maintain the maximum width of the hero section */
+    margin: 0 auto; /* Center the hero section horizontally */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1350px; /* Set a max-width for the text */
+    margin: 0 auto; /* Center the text container */
+    padding: 0 20px; /* Add padding for text content */
 }
 
 .hero h2 {
@@ -72,7 +81,7 @@ nav ul li a:hover {
 .content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 5px 20px;
 }
 
 .employment-history,
@@ -172,6 +181,7 @@ nav ul li a:hover {
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
 .languages-box img {
     width: 120px;
     height: 80px;
