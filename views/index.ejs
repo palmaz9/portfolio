@@ -45,9 +45,8 @@
             <div class="employment-history">
                 <h3>Employment History</h3>
                 <div class="employment-cards">
-                    <div class="experience-card">
+                    <div class="experience-card card"> <!-- Add the 'card' class -->
                         <div class="experience-header">
-                            <!-- Wrap the image with an anchor tag for the hyperlink -->
                             <a href="https://www.pittstate.edu/index.html" target="_blank">
                                 <img src="/images/pittstate.png" alt="Pittsburg State University Logo" class="institution-logo">
                             </a>
@@ -59,9 +58,8 @@
                         </ul>
                     </div>
 
-                    <div class="experience-card">
+                    <div class="experience-card card"> <!-- Add the 'card' class -->
                         <div class="experience-header">
-                            <!-- Wrap the image with an anchor tag for the hyperlink -->
                             <a href="https://www.braskem.com.br/usa" target="_blank">
                                 <img src="/images/braskem.png" alt="Braskem Logo" class="institution-logo">
                             </a>
@@ -74,9 +72,8 @@
                         </ul>
                     </div>
 
-                    <div class="experience-card">
+                    <div class="experience-card card"> <!-- Add the 'card' class -->
                         <div class="experience-header">
-                            <!-- Wrap the image with an anchor tag for the hyperlink -->
                             <a href="https://www.raizen.com.br/en" target="_blank">
                                 <img src="/images/raizen.png" alt="Raizen Logo" class="institution-logo">
                             </a>
@@ -94,7 +91,7 @@
             <div class="skills-section">
                 <h3>Skills</h3>
                 <div class="skills-cards">
-                    <div class="skills-card">
+                    <div class="skills-card card"> <!-- Add the 'card' class -->
                         <h4>Data Analysis & Visualization</h4>
                         <ul>
                             <li>SQL</li>
@@ -106,7 +103,7 @@
                         </ul>
                     </div>
 
-                    <div class="skills-card">
+                    <div class="skills-card card"> <!-- Add the 'card' class -->
                         <h4>Programming Languages</h4>
                         <ul>
                             <li>Python</li>
@@ -118,7 +115,7 @@
                         </ul>
                     </div>
 
-                    <div class="skills-card">
+                    <div class="skills-card card"> <!-- Add the 'card' class -->
                         <h4>CRM & Business Tools</h4>
                         <ul>
                             <li>Salesforce</li>
@@ -133,16 +130,14 @@
             <div class="education-section">
                 <h3>Education</h3>
                 <div class="education-cards">
-                    <div class="education-box">
-                        <!-- Wrap the image with an anchor tag for the hyperlink -->
+                    <div class="education-box card"> <!-- Add the 'card' class -->
                         <a href="https://www.pittstate.edu/index.html" target="_blank">
                             <img src="/images/pittstate.png" alt="Pittsburg State University Logo" class="education-logo">
                         </a>
                         <p>Pittsburg State University</p>
                         <p><strong>Master of Science in Technology<br> Emphasis in Information Technology</strong><br>05/2024<br>Pittsburg, Kansas, United States</p>
                     </div>
-                    <div class="education-box">
-                        <!-- Wrap the image with an anchor tag for the hyperlink -->
+                    <div class="education-box card"> <!-- Add the 'card' class -->
                         <a href="https://www.unifacs.br/" target="_blank">
                             <img src="/images/unifacs.jpg" alt="Salvador University Logo" class="education-logo">
                         </a>
@@ -156,12 +151,12 @@
             <div class="languages-section">
                 <h3>Languages</h3>
                 <div class="languages-cards">
-                    <div class="languages-box">
+                    <div class="languages-box card"> <!-- Add the 'card' class -->
                         <img src="/images/unitedStates.png" alt="USA Flag" class="flag">
                         <p>English</p>
                         <p><strong>Fluent</strong></p>
                     </div>
-                    <div class="languages-box">
+                    <div class="languages-box card"> <!-- Add the 'card' class -->
                         <img src="/images/brazil.png" alt="Brazil Flag" class="flag">
                         <p>Portuguese</p>
                         <p><strong>Native</strong></p>
@@ -201,37 +196,19 @@
         // ScrollMagic to trigger animations on scroll
         var controller = new ScrollMagic.Controller();
 
-        new ScrollMagic.Scene({
-            triggerElement: ".employment-history",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle(".employment-history", "visible")
-            .addTo(controller);
+        // Select all cards
+        var cards = document.querySelectorAll('.card');
 
-        new ScrollMagic.Scene({
-            triggerElement: ".skills-section",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle(".skills-section", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: ".education-section",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle(".education-section", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: ".languages-section",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle(".languages-section", "visible")
-            .addTo(controller);
+        // Add animation to each card
+        cards.forEach(function (card, index) {
+            var scene = new ScrollMagic.Scene({
+                triggerElement: card, // Each card is the trigger
+                triggerHook: 0.8, // Trigger the animation when the card is 80% visible
+                reverse: false // Do not reverse the animation when scrolling back
+            })
+            .setClassToggle(card, 'visible') // Add the 'visible' class
+            .addTo(controller); // Add scene to controller
+        });
     </script>
 </body>
 
