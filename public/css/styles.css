@@ -12,7 +12,7 @@
     transform: translateY(0); /* Move the card to its original position */
 }
 
-/* Other existing styles */
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -36,7 +36,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Smaller font size for better fit on mobile */
 }
 
 nav ul {
@@ -48,7 +48,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px; /* Reduced margin for smaller screen fit */
 }
 
 nav ul li a {
@@ -59,36 +59,36 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #6bbdfb;
+    color: #8ac4ff;
 }
 
 .hero {
     background: linear-gradient(135deg, #3949ab, #5c6bc0);
     color: white;
     text-align: center;
-    padding: 130px 0 60px; /* Reduced top and bottom padding */
+    padding: 115px 20px 60px; /* Add horizontal padding for better fit */
     margin-top: 90px; /* Align with the header height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 15px 15px;
-    max-width: 1519px; /* Maintain the maximum width of the hero section */
-    margin: 0 auto; /* Center the hero section horizontally */
+    max-width: 1519px;
+    margin: 0 auto;
     position: relative;
 }
 
 .hero-content {
-    max-width: 1350px; /* Set a max-width for the text */
-    margin: 0 auto; /* Center the text container */
-    padding: 0 20px; /* Add padding for text content */
+    max-width: 800px; /* Reduced width for better mobile fit */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Adjusted font size for mobile readability */
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Smaller font size for mobile */
     margin: 0;
     font-weight: 300;
 }
@@ -99,6 +99,7 @@ nav ul li a:hover {
     padding: 5px 20px;
 }
 
+/* Employment History and Other Sections */
 .employment-history,
 .skills-section,
 .education-section,
@@ -120,8 +121,11 @@ nav ul li a:hover {
     font-size: 1.8rem;
 }
 
+/* Card Styles */
 .employment-cards,
-.skills-cards {
+.skills-cards,
+.education-cards,
+.languages-cards {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -136,7 +140,7 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex: 1;
-    min-width: 300px; /* Ensures that each card maintains a minimum width */
+    min-width: 300px; /* Ensures each card maintains a minimum width */
     margin: 10px 0;
 }
 
@@ -168,15 +172,7 @@ nav ul li a:hover {
     margin-bottom: 5px;
 }
 
-.education-cards,
-.languages-cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px; /* Add space between section header and cards */
-}
-
+/* Education and Languages Cards */
 .education-box,
 .languages-box {
     background: #f9f9f9;
@@ -184,10 +180,10 @@ nav ul li a:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center content */
+    text-align: center;
     flex: 1;
-    min-width: 250px; /* Ensures each box maintains a minimum width */
-    max-width: 45%; /* Maximum width to allow two items per row */
+    min-width: 250px;
+    max-width: 45%;
 }
 
 .education-box img {
@@ -241,12 +237,41 @@ footer p {
     color: #ffca28;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    /* Styles for tablet devices */
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    /* Styles for mobile devices */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce margin for stacked items */
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 10px;
+    }
+
     .employment-cards,
     .skills-cards,
     .education-cards,
     .languages-cards {
-        flex-direction: column;
+        flex-direction: column; /* Stack cards vertically */
     }
 
     .experience-card,
@@ -254,5 +279,27 @@ footer p {
     .education-box,
     .languages-box {
         min-width: 100%;
+    }
+
+    .education-box,
+    .languages-box {
+        max-width: 100%;
+        margin-bottom: 20px; /* Add space between stacked cards */
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
     }
 }
