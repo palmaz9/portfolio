@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Lucas Palma - Projects</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -28,33 +28,40 @@
 
     <main>
         <section class="hero">
-            <h2 class="animate__animated animate__fadeInDown">Projects</h2>
-            <p class="animate__animated animate__fadeInUp">Explore my portfolio of projects showcasing my skills and experiences.</p>
+            <div class="hero-content">
+                <h2 class="animate__animated animate__fadeInDown">Projects</h2>
+                <p class="animate__animated animate__fadeInUp">Explore my portfolio of projects showcasing my skills and experiences.</p>
+            </div>
         </section>
 
-        <section class="content">
-            <div class="card" id="project1-card">
+        <section class="content projects-section">
+            <div class="project-card" id="project1-card">
                 <h3>VBA Database Management and Auditing Emails (Braskem)</h3>
+                <img src="/images/vba_emails.png" alt="VBA Project Image">
                 <p>Developed a VBA algorithm to manage databases and send auditing emails to external law firms.</p>
             </div>
 
-            <div class="card" id="project2-card">
+            <div class="project-card" id="project2-card">
                 <h3>Web Development Application for Hospital</h3>
+                <img src="/images/web_dev_project.jpg" alt="Web Development Project Image">
                 <p>Created a web application for managing patient and doctor databases.</p>
             </div>
 
-            <div class="card" id="project3-card">
+            <div class="project-card" id="project3-card">
                 <h3>Power BI Dashboards for Legal Efficiency (Braskem)</h3>
+                <img src="/images/power_bi_dashboard.jpg" alt="Power BI Dashboard Image">
                 <p>Developed visual dashboards for tracking KPIs in the Legal Efficiency department.</p>
             </div>
 
-            <div class="card" id="project4-card">
+            <div class="project-card" id="project4-card">
                 <h3>Housing Prediction and Convolutional Neural Networks (AI class)</h3>
+                <img src="/images/housing_prediction.jpg" alt="Housing Prediction Image">
                 <p>Worked on housing prediction models and CNNs for image recognition tasks.</p>
             </div>
 
-            <div class="card" id="project5-card">
+            <div class="project-card" id="project5-card">
                 <h3>Chess Engine Paper (AI class)</h3>
+                <img src="/images/chess_engine.jpg" alt="Chess Engine Image">
                 <p>Authored a 10-page paper on building a chess engine.</p>
             </div>
         </section>
@@ -69,55 +76,13 @@
     </footer>
 
     <script>
-        // GSAP animations for project cards
-        gsap.from("#project1-card", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
-        gsap.from("#project2-card", { duration: 1, y: 50, opacity: 0, delay: 1 });
-        gsap.from("#project3-card", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
-        gsap.from("#project4-card", { duration: 1, y: 50, opacity: 0, delay: 2 });
-        gsap.from("#project5-card", { duration: 1, y: 50, opacity: 0, delay: 2.5 });
-
-        // ScrollMagic to trigger animations on scroll
-        var controller = new ScrollMagic.Controller();
-
-        new ScrollMagic.Scene({
-            triggerElement: "#project1-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#project1-card", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: "#project2-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#project2-card", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: "#project3-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#project3-card", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: "#project4-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#project4-card", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: "#project5-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#project5-card", "visible")
-            .addTo(controller);
+        $(document).ready(function () {
+            $('.project-card').each(function (index) {
+                $(this).delay(index * 200).queue(function () {
+                    $(this).addClass('visible').dequeue();
+                });
+            });
+        });
     </script>
 </body>
 
