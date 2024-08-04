@@ -6,6 +6,24 @@
     flex-wrap: wrap;
 }
 
+.projects-section .project-card img.project-img {
+    display: block; /* Ensures the image behaves as a block element */
+    width: 75%; /* Ensures the image takes full width of the container */
+    height: auto; /* Maintains the aspect ratio */
+    max-height: 200px; /* Sets a maximum height to maintain uniformity */
+    object-fit: cover; /* Ensures the image fills the container without stretching */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 15px; /* Space below the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for interactivity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Project Card Styles */
 .project-card {
     background: #fff;
     padding: 20px;
@@ -19,6 +37,10 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
     transform: translateY(20px);
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .project-card h3 {
