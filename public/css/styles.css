@@ -14,7 +14,7 @@
     object-fit: cover; /* Ensures the image fills the container without stretching */
     border-radius: 10px; /* Rounded corners for a softer look */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    margin-bottom: 15px; /* Space below the image */
+    margin: 0 auto 15px; /* Center the image horizontally, with space below */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 
@@ -110,8 +110,8 @@ header {
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
     width: 100%;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -149,7 +149,7 @@ nav ul li a:hover {
     background: linear-gradient(135deg, #3949ab, #5c6bc0);
     color: white;
     text-align: center;
-    padding: 115px 20px 60px;
+    padding: 15px 20px 60px;
     margin-top: 80px; /* Align with header height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 15px 15px;
@@ -159,7 +159,7 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -344,7 +344,7 @@ footer p {
     }
 
     .hero-content {
-        max-width: 90%;
+        max-width: 50%;
         padding: 10px;
     }
 
