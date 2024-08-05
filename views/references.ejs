@@ -67,46 +67,35 @@
     </footer>
 
     <script>
-        // GSAP animations for reference cards
-        gsap.from("#reference1-card", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
-        gsap.from("#reference2-card", { duration: 1, y: 50, opacity: 0, delay: 1 });
-        gsap.from("#reference3-card", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
-        gsap.from("#reference4-card", { duration: 1, y: 50, opacity: 0, delay: 2 });
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll(".reference-card");
 
-        // ScrollMagic to trigger animations on scroll
-        var controller = new ScrollMagic.Controller();
+            // Function to check if an element is in viewport
+            const isInViewport = (element) => {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            };
 
-        new ScrollMagic.Scene({
-            triggerElement: "#reference1-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#reference1-card", "visible")
-            .addTo(controller);
+            // Add scroll event listener
+            const handleScroll = () => {
+                cards.forEach(card => {
+                    if (isInViewport(card)) {
+                        card.classList.add("visible");
+                    }
+                });
+            };
 
-        new ScrollMagic.Scene({
-            triggerElement: "#reference2-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#reference2-card", "visible")
-            .addTo(controller);
+            // Initial check
+            handleScroll();
 
-        new ScrollMagic.Scene({
-            triggerElement: "#reference3-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#reference3-card", "visible")
-            .addTo(controller);
-
-        new ScrollMagic.Scene({
-            triggerElement: "#reference4-card",
-            triggerHook: 0.9,
-            reverse: false
-        })
-            .setClassToggle("#reference4-card", "visible")
-            .addTo(controller);
+            // Listen for scroll events
+            window.addEventListener("scroll", handleScroll);
+        });
     </script>
 </body>
 

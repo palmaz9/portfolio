@@ -1,7 +1,8 @@
 /* References Section Styles */
 .references-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center align the cards */
+    align-items: center; /* Vertically align items */
     gap: 20px;
     flex-wrap: wrap;
     max-width: 1200px; /* Maximum width of the section */
@@ -12,7 +13,7 @@
 /* Reference Card Styles */
 .reference-card {
     background-color: #fff; /* Background color for the card */
-    width: 45%; /* Take up 40% of the width to account for gap */
+    width: 45%; /* Adjust width to fit two cards per row on larger screens */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners for a softer look */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -53,14 +54,24 @@
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
     .references-section {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
+        justify-content: center; /* Center the cards */
     }
 
     .reference-card {
-        max-width: 100%; /* Full width on smaller screens */
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
         margin-bottom: 20px; /* Bottom margin */
     }
 }
+
+@media screen and (max-width: 768px) {
+    .reference-card {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
+        margin-bottom: 20px; /* Bottom margin */
+    }
+}
+
 
 
 /* Project Cards Styles */
@@ -224,9 +235,8 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    max-width: 85%;
+    width: 95%;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .hero h2 {
@@ -239,6 +249,14 @@ nav ul li a:hover {
     font-size: 1.2rem;
     margin: 0;
     font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content p {
+        /* Reduce margin and padding for mobile screens */
+        margin: 10px; /* Adjust this value for desired spacing on mobile */
+        padding: 5px; /* Adjust this value for desired spacing on mobile */
+    }
 }
 
 .content {
