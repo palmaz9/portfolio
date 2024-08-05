@@ -1,3 +1,68 @@
+/* References Section Styles */
+.references-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Maximum width of the section */
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 20px; /* Add padding around the section */
+}
+
+/* Reference Card Styles */
+.reference-card {
+    background-color: #fff; /* Background color for the card */
+    width: 45%; /* Take up 40% of the width to account for gap */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center text inside the card */
+    margin-bottom: 20px; /* Space below each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Initial transform for animation effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.reference-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transform: translateY(10px); /* Slight lift on hover */
+}
+
+.reference-card.visible {
+    transform: translateY(0); /* Move to normal position */
+    opacity: 1; /* Make visible */
+}
+
+.reference-card h3 {
+    color: #1a237e; /* Header color */
+    font-size: 1.5rem; /* Header font size */
+    margin-bottom: 10px; /* Space below header */
+}
+
+.reference-card p {
+    margin: 5px 0; /* Vertical margins */
+    font-size: 1rem; /* Paragraph font size */
+    color: #666; /* Text color */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .references-section {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+    }
+
+    .reference-card {
+        max-width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Bottom margin */
+    }
+}
+
+
 /* Project Cards Styles */
 .projects-section {
     display: flex;
@@ -159,7 +224,7 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    max-width: 1100px;
+    max-width: 85%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -317,7 +382,7 @@ footer p {
 }
 
 .social-media a:hover {
-    color: #ffca28;
+    color: #8ac4ff;
 }
 
 /* Responsive Styles */
